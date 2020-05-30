@@ -6695,3 +6695,6 @@ text-align: center;
 	display: block;
 	margin: 2px;
 }
+#datatable-default_filter{ /*Search bar for data-table */
+	display:none;
+}
