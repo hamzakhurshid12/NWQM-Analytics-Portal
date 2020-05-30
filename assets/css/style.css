@@ -2719,7 +2719,7 @@ text-align: center;
  * 4.16. SECTION BREADCRUMB 1 *
  *============================*/
 #section-breadcrumb1 .content{
-	padding: 304px 15px 95px;
+	padding: 100px 15px 40px;
 }
 #section-breadcrumb1 .content h1{
 	font-family: 'Quicksand-Bold';
