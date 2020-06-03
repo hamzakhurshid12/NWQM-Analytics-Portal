@@ -169,7 +169,7 @@ getamChartsScripts();
             <section style="width: 100%">
 									<header class="panel-heading">
 						
-										<h2 class="panel-title">Graph Inputs</h2>
+										<h2 class="panel-title">First Parameter Inputs</h2>
 									</header>
 									<div>
 										<form class="form-horizontal" method="get" style="width: 100%">
@@ -182,14 +182,6 @@ getamChartsScripts();
                                                         <option value="S3">Source 3</option>
                                                         <option value="S4">Source 4</option>
 														<option value="S5">Source 5</option>
-                                                        <option value="S6">Source 6</option>
-                                                        <option value="S7">Source 7</option>
-														<option value="S8">Source 8</option>
-                                                        <option value="S9">Source 9</option>
-                                                        <option value="S10">Source 10</option>
-														<option value="S11">Source 11</option>
-                                                        <option value="S12">Source 12</option>
-                                                        <option value="Reservoir">Reservoir</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -217,13 +209,6 @@ getamChartsScripts();
                                 <br>
                                 <br>
                                 <br>
-                                <div align="center">
-                                	<h1>Comparative Analysis</h1>
-                                </div>
-                                <br>
-<div align="center" style="color: gray"><h2>Past 3 year Trends</h2></div>
-                                
-                                
                                 
 
 <style>
@@ -316,17 +301,59 @@ am4core.useTheme(am4themes_animated);
                 <div id="dataChart" style="width: 100%; ">
                     <?php 
                     
-                    getamChartsDiv1(3, 'S2');
+                    getamChartsDiv(3, 'S2');
                     ?>
                 </div>
 
                 <br><br><br>
-                <div align="center" style="color: gray"><h2>Past Month Trends</h2></div>
-
+                <section role="main" style="width: 100%">
+            <section style="width: 100%">
+									<header class="panel-heading">
+						
+										<h2 class="panel-title">Second Parameter Inputs</h2>
+									</header>
+									<div>
+										<form class="form-horizontal" method="get" style="width: 100%">
+											<div class="form-group">
+												<label class="col-md-3 control-label" for="inputSuccess">Data Source</label>
+												<div class="col-md-6" style="width: 100%">
+													<select class="form-control input-sm mb-md" id="sourceDropdown1">
+														<option value="S1">Source 1</option>
+														<option value="S2">Source 2</option>
+                                                        <option value="S3">Source 3</option>
+                                                        <option value="S4">Source 4</option>
+														<option value="S5">Source 5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div style="width: 100%;">
+                                            <label class="col-md-3 control-label" for="inputSuccess">Data Type</label>
+												<div class="col-md-6" style="width: 100%;">
+                                                <select class="form-control input-sm mb-md" id="typeDropdown1">
+														<option value="3">Temperature</option>
+														<option value="4">Turbidity</option>
+                                                        <option value="5">pH</option>
+                                                        <option value="6">Alkilinity</option>
+														<option value="7">Hardness (CaCO3)</option>
+                                                        <option value="8">Conductance</option>
+                                                        <option value="9">Calcium</option>
+														<option value="10">Total Dissolved Solids</option>
+                                                        <option value="11">Chlorides</option>
+                                                        <option value="12">Nitrate (NO2)</option>
+														<option value="13">Fecal Chloriform Count</option>
+													</select>
+                                                </div>
+											</div>
+										</form>
+									</div>
+                                </section>
+                                <br>
+                                <br>
+                                <br>
 
                 <div id="dataChart1" style="width: 100%; ">
                     <?php 
-                    		getamChartsDiv(3, 'S2');
+                    		getamChartsDiv1(3, 'S2');
                     ?>
                 </div>
     
@@ -369,13 +396,24 @@ am4core.useTheme(am4themes_animated);
                 $("#dataChart").html(result);
                 console.log(result);
             }});
-            $.ajax({url: "php/amcharts.php?index="+type+"&reservoir="+source+"&chart=2", success: function(result){
+
+
+        });
+        </script>
+
+                <script>
+        $("#sourceDropdown1, #typeDropdown1").change(function(){
+            var source=$("#sourceDropdown1 option:selected").val();
+            var type=$("#typeDropdown1 option:selected").val();
+            $.ajax({url: "php/amcharts.php?index="+type+"&reservoir="+source+"&chart=1", success: function(result){
                 $("#dataChart1").html(result);
                 console.log(result);
             }});
 
+
         });
         </script>
+
 
 
 					</div>
