@@ -153,8 +153,7 @@ table, th, td {
 
 
 <center>
-                <table style="width: 98%">
-               
+<table style="width: 98%">
   <tr>
     <th style="background-color: black; color: white; font-weight: normal;">Index Range</th>
     <th style="background-color: black; color: white; font-weight: normal;text-align: center">100-95</th>

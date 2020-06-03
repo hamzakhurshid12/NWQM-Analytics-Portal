@@ -244,7 +244,7 @@ table, th, td {
 </center>
 <br><br>               
                             <div id="map" class="map"></div>
-                        <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrvECKXyuCwA5sBu0ld4MI8fGyvLs3kxE&callback=initMap&libraries=visualization">
+                        <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIwcKb9GpuoAN3Nvj6OGkKJOqnxrLCLbI&callback=initMap&libraries=visualization">
                         </script>
                         <script src="map_assets\js\functions.js"></script>
 
