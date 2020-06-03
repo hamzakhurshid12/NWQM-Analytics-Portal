@@ -162,47 +162,37 @@ getamChartsScripts();
                     </div>
                 </div>
             </div>
-        
-
-
-
- 
-
-        
 
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body card-block">
                             <form id="map-form" class="form-horizontal" action="update.php" name="map-select" style="padding-bottom: 0px">
-                                <div class="row form-group">
-                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Enter the Parameter</label></div>
+
+                            <div class="row form-group">
+                                    <div class="col col-md-3">
+                                    <label for="select" class=" form-control-label">Enter the Start Date</label>
+                                    </div>
                                     <div class="col-12 col-md-9">
-                                        <select class="form-control" name="Parameter" value="Choose Parameter">
-                                                            <option value="Turbidity" class="dropdown-header"><a href="#"><i>Turbidity</i></a></option>
-                                                            <option value="Temperature" class="dropdown-header"><a href="#"><i>Temperature</i></a></option>
-                                                            <option value="DO" class="dropdown-header"><a href="#"><i>DO</i></a></option>
-                                                            <option value="pH" class="dropdown-header"><a href="#"><i>pH</i></a></option>
-                                                            <option value="Conductivity" class="dropdown-header"><a href="#"><i>Conductivity</i></a></option>
-                                                            </select>
+                                        <input id="startDate" class="form-control" type="date" name="date" required="">
                                     </div>
                                 </div>
 
-
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="select" class=" form-control-label">Enter the Date</label></div>
+                                    <div class="col col-md-3">
+                                    <label for="select" class=" form-control-label">Enter the End Date</label>
+                                    </div>
                                     <div class="col-12 col-md-9">
-                                        <input class="form-control" type="date" name="date" required="">
+                                        <input id="endDate" class="form-control" type="date" name="date" required="">
                                     </div>
                                 </div>
-
                             </form>
                         </div>
                         
                         <div class="card-footer" style="align-content: center;">
                             <center>
-                            <button type="submit" class="btn btn-primary" onclick="updateMap()" form="" style="background-color: black; align-content: center;">
-                                     Enter
+                            <button type="submit" class="btn btn-primary" onclick="getHeatmapData()" form="" style="background-color: black; align-content: center;">
+                                     Plot on Map
                                 </button>
                                 </center>
                         </div>
@@ -247,7 +237,6 @@ table, th, td {
                         <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIwcKb9GpuoAN3Nvj6OGkKJOqnxrLCLbI&callback=initMap&libraries=visualization">
                         </script>
                         <script src="map_assets\js\functions.js"></script>
-
     <script>
         /*(function($) {
             "use strict";

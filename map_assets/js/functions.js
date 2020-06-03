@@ -6,7 +6,7 @@ var circles = [];
 function initMap() {
     // Create the map.
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
+        zoom: 14,
         center: {
             lat: 33.699997 ,
             lng: 73.116666 
@@ -25,7 +25,7 @@ function initMap() {
         }
     });
 
-    getHeatmapdata();
+    //getHeatmapdata();
 
     //console.log(heatmapData);
 
@@ -563,19 +563,34 @@ function readTextFile(file, callback) {
     rawFile.send(null);
 }
 
-function getHeatmapdata(){
+function getHeatmapData(){
+
+    var startDate=document.getElementById("startDate").value;
+    var endDate=document.getElementById("endDate").value;
+
+    if(startDate==="" || endDate===""){
+        alert("Please enter valid starting and ending dates!");
+        return;
+    }
+
+    startDate=Date.parse(startDate);
+    endDate=Date.parse(endDate);
+
     var heatMapdata = [];
 
     readTextFile("map_assets/WaterQualityWithGps.json", function(text){
         var data = JSON.parse(text);
         //console.log(data);
         for (var i=0;i<data.length;i++){
-            var lat=parseFloat(data[i].latitude)
-            var lng=parseFloat(data[i].longitude)
-            if (!isNaN(lat) && !isNaN(lng)){
-                var dataPoint = new google.maps.LatLng(lat, lng);
-                var wqi=calcwqi(calcphwqi(data[i].pH),data[i].temperature,calcturbwqi(data[i].turbidity),calctswqi(parseFloat(data[i].conductivity)/2))
-                heatMapdata.push({location: dataPoint, weight: wqi});
+            var thisDate=Date.parse(data[i].timestamp);
+            if(thisDate>startDate && thisDate<endDate){ //if date is in user provided range!
+                var lat=parseFloat(data[i].latitude)
+                var lng=parseFloat(data[i].longitude)
+                if (!isNaN(lat) && !isNaN(lng)){
+                    var dataPoint = new google.maps.LatLng(lat, lng);
+                    var wqi=calcwqi(calcphwqi(data[i].pH),data[i].temperature,calcturbwqi(data[i].turbidity),calctswqi(parseFloat(data[i].conductivity)/2))
+                    heatMapdata.push({location: dataPoint, weight: wqi});
+                }
             }
         }
         var heatmap = new google.maps.visualization.HeatmapLayer({
@@ -593,5 +608,6 @@ function getHeatmapdata(){
             heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
 
     });
+    document.getElementById("map").scrollIntoView();
 }
 
