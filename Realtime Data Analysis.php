@@ -115,27 +115,18 @@ getamChartsScripts();
 	<div class="main-wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar" class="active">
-            <ul class="list-unstyled components">
-              <li>
-                    <a href="NWQM - Home Page.php" class="list-menu">Home</a>
+		<ul class="list-unstyled components">
+                <li>
+                    <a href="NWQM - Home Page.php">Home</a>
                 </li>
                 <li>
-                    <a href="Historic Readings.php" class="list-menu">Historic Readings</a>
-                </li>
-                    <li>
                     <a href="Realtime Readings.php" class="list-menu">Realtime Readings</a>
                 </li>
                 <li>
-                    <a href="Data Analysis.php" class="list-menu">Data Analysis</a>
+                    <a href="Realtime Data Analysis.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Data Analysis</a>
                 </li>
-                <li>
-                    <a href="Realtime Data Analysis.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Realtime Data Analysis</a>
-                </li>
-                <li>
-                    <a href="IoT Map.php" class="list-menu">IoT Map</a>
-                </li>
-                <li>
-                    <a href="Bacterial Classification.php" class="list-menu">Bacterial Classification</a>
+                 <li>
+                    <a href="IoT Map.php" class="list-menu">Classification Map</a>
                 </li>
             </ul>
         </nav>

@@ -113,24 +113,14 @@
                     <a href="NWQM - Home Page.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Home</a>
                 </li>
                 <li>
-                    <a href="Historic Readings.php" class="list-menu">Historic Readings</a>
-                </li>
-                <li>
                     <a href="Realtime Readings.php" class="list-menu">Realtime Readings</a>
                 </li>
                 <li>
-                    <a href="Data Analysis.php" class="list-menu">Data Analysis</a>
-                </li>
-                <li>
-                    <a href="Realtime Data Analysis.php" class="list-menu">Realtime Data Analysis</a>
+                    <a href="Realtime Data Analysis.php" class="list-menu">Data Analysis</a>
                 </li>
                  <li>
-                    <a href="IoT Map.php" class="list-menu">IoT Map</a>
+                    <a href="IoT Map.php" class="list-menu">Classification Map</a>
                 </li>
-                <li>
-                    <a href="Bacterial Classification.php" class="list-menu">Bacterial Classification</a>
-                </li>
-
             </ul>
         </nav>
         <!-- /.Sidebar  -->
