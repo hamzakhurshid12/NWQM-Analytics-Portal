@@ -128,6 +128,9 @@ getamChartsScripts();
                  <li>
                     <a href="IoT Map.php" class="list-menu">Classification Map</a>
                 </li>
+				<li>
+                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Prediction</a>
+                </li>
             </ul>
         </nav>
         <!-- /.Sidebar  -->
@@ -176,11 +179,11 @@ getamChartsScripts();
 												<label class="control-label" for="inputSuccess" style="font-weight:bold">Data Source</label>
 												<div class="col-md-6">
 													<select class="form-control input-sm mb-md" id="sourceDropdown">
-														<option value="0" <?php if($kitID=="0"){ echo "selected";}?>>Kit 0</option>
-														<option value="1" <?php if($kitID=="1"){ echo "selected";}?> >Kit 1</option>
-                                                        <option value="2" <?php if($kitID=="2"){ echo "selected";}?> >Kit 2</option>
-                                                        <option value="3" <?php if($kitID=="3"){ echo "selected";}?> >Kit 3</option>
-														<option value="4" <?php if($kitID=="4"){ echo "selected";}?> >Kit 4</option>
+														<option value="0" <?php if($kitID=="0"){ echo "selected";}?>>Node 0</option>
+														<option value="1" <?php if($kitID=="1"){ echo "selected";}?> >Node 1</option>
+                                                        <option value="2" <?php if($kitID=="2"){ echo "selected";}?> >Node 2</option>
+                                                        <option value="3" <?php if($kitID=="3"){ echo "selected";}?> >Node 3</option>
+														<option value="4" <?php if($kitID=="4"){ echo "selected";}?> >Node 4</option>
                                                     </select>
                                                 </div>
                                             </div>

@@ -109,7 +109,7 @@ getamChartsScripts();
         <nav id="sidebar" class="active">
             <ul class="list-unstyled components">
                 <li>
-                    <a href="NWQM - Home Page.php" class="list-menu">Home</a>
+                    <a href="index.php" class="list-menu">Home</a>
                 </li>
                 <li>
                     <a href="Historic Readings.php" class="list-menu">Historic Readings</a>
@@ -128,7 +128,7 @@ getamChartsScripts();
                     <a href="IoT Map.php" class="list-menu">IoT Map</a>
                 </li>
                 <li>
-                    <a href="Bacterial Classification.php" class="list-menu">Bacterial Classification</a>
+                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Prediction</a>
                 </li>
             </ul>
         </nav>

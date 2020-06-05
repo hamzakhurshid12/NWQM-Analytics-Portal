@@ -35,7 +35,8 @@
     <!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
 		
-			<script src="assets/js/WqiScript.js"></script>
+		<script src="assets/js/WqiScript.js"></script>
+        <script src="assets/js/MLPRegressor.js"></script>
 </head>
 <body>
 	<!-- Section Preloader -->
@@ -101,7 +102,7 @@
         <nav id="sidebar" class="active">
             <ul class="list-unstyled components">
                 <li>
-                    <a href="NWQM - Home Page.php" class="list-menu">Home</a>
+                    <a href="index.php" class="list-menu">Home</a>
                 </li>
                 <li>
                     <a href="Realtime Readings.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Realtime Readings</a>
@@ -111,6 +112,9 @@
                 </li>
                  <li>
                     <a href="IoT Map.php" class="list-menu">Classification Map</a>
+                </li>
+                <li>
+                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Prediction</a>
                 </li>
             </ul>
         </nav>
@@ -221,12 +225,19 @@ table, th, td {
                                         <?php
                                         $prevTemp=40;
                                         for($x=count($data_json["rows"])-1;$x>=0;$x--){
-                                            echo '<tr>';
                                             $tempDiff=abs($prevTemp-floatval($data_json['rows'][$x]['temperature']));
                                             $prevTemp=floatval($data_json['rows'][$x]['temperature']);
                                             $wqi=$tempDiff;
-                                            echo '<td>'.$data_json['rows'][$x]['timestamp'].'</td>'.'<td>'.$data_json['rows'][$x]['turbidity'].'</td>'.'<td>'.$data_json['rows'][$x]['pH'].'</td>'.'<td>'.$data_json['rows'][$x]['dissolvedOxygen'].'</td>'.'<td>'.$data_json['rows'][$x]['conductivity'].'</td>'.'<td>'.$data_json['rows'][$x]['temperature'].'</td>'.'<td>'
-                                                .$wqi.'</td>';
+                                            //$fecalColiform=predict(floatval($data_json['rows'][$x]['temperature']),floatval($data_json['rows'][$x]['turbidity']),floatval($data_json['rows'][$x]['pH']),floatval($data_json['rows'][$x]['conductivity']),floatval($data_json['rows'][$x]['disolvedOxygen']));
+                                            //console.log($fecalColiform);
+                                            echo '<tr>';
+                                            echo '<td>'.$data_json['rows'][$x]['timestamp'].'</td>'
+                                            .'<td>'.$data_json['rows'][$x]['turbidity'].'</td>'
+                                            .'<td>'.$data_json['rows'][$x]['pH'].'</td>'
+                                            .'<td>'.$data_json['rows'][$x]['dissolvedOxygen'].'</td>'
+                                            .'<td>'.$data_json['rows'][$x]['conductivity'].'</td>'
+                                            .'<td>'.$data_json['rows'][$x]['temperature'].'</td>'
+                                            .'<td>'.$wqi.'</td>';
                                             echo '</tr>';
                                         }
                                         ?>
