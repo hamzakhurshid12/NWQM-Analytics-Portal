@@ -120,6 +120,9 @@
                 <li>
                     <a href="Bacterial Classification.php" class="list-menu">Bacterial Classification</a>
                 </li>
+				<li>
+                    <a href="ml-models.php" class="list-menu">ML Models Analysis</a>
+                </li>
             </ul>
         </nav>
         <!-- /.Sidebar  -->
