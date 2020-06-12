@@ -34,6 +34,27 @@
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <!-- Head Libs -->
 		<script src="assets/vendor/modernizr/modernizr.js"></script>
+		<script>
+		function readHistoricalData()
+		{
+				var data;
+				var rawFile = new XMLHttpRequest();
+				rawFile.open("GET", "6_parameters.csv", false);
+				rawFile.onreadystatechange = function ()
+				{
+					if(rawFile.readyState === 4)
+					{
+						if(rawFile.status === 200 || rawFile.status == 0)
+						{
+							var allText = rawFile.responseText;
+							data = $.csv.toObjects(allText);
+						}
+					}
+				}
+				rawFile.send(null);
+				return data;
+			}
+		</script>
 		
 		<script src="assets/js/WqiScript.js"></script>
         <script src="assets/js/MLPRegressor.js"></script>
@@ -376,6 +397,7 @@ table, th, td {
 	<script src="assets/js/cmz-count.js"></script>
 	<!-- Scripts -->
 	<script src="assets/js/scripts.js"></script>
+	<script src="assets/js/jquery-csv.js"></script>
 	
 	<script>
 	//Code for hiding unwanted items
@@ -385,8 +407,16 @@ table, th, td {
 	
 	<script>
 	    var table = document.getElementById('datatable-default');
+		
+		var data=readHistoricalData();
+		
+		var extraRows="";
+		for(var i=0;i<data.length;i++){
+			extraRows+="<tr><td>"+data[i].timestamp+"</td><td>"+data[i].turbidity+"</td><td>"+data[i].pH+"</td><td>"+data[i].dissolvedOxygen+"</td><td>"+data[i].conductivity+"</td><td>"+data[i].temperature+"</td><td>"+data[i].temperature+"</td></tr>";
+		}
+		table.getElementsByTagName("tbody")[0].innerHTML+=extraRows;
 
-        var rowLength = table.rows.length;
+        var rowLength = table.rows.length;	
         
         for(var i=1; i<rowLength; i+=1){
           var row = table.rows[i];

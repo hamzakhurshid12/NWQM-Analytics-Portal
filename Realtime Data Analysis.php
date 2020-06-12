@@ -337,7 +337,7 @@ am4core.useTheme(am4themes_animated);
 
 		//For Changing the Kit
 		$("#sourceDropdown").change(function(){
-			window.location.replace("Data Charts - Realtime.php?kitID="+$("#sourceDropdown").val());
+			window.location.replace("Realtime Data Analysis.php?kitID="+$("#sourceDropdown").val());
 		})
         </script>
     </div>

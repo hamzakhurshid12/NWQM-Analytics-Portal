@@ -122,7 +122,13 @@
                     <a href="IoT Map.php" class="list-menu">Classification Map</a>
                 </li>
 				<li>
-                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Prediction</a>
+                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Calculator</a>
+                </li>
+				<li>
+                    <a href="Realtime Data Analysis copy.php" class="list-menu">Realtime Bacteria Prediction</a>
+                </li>
+				<li>
+                    <a href="ml-models.php" class="list-menu">ML Models Analysis</a>
                 </li>
             </ul>
         </nav>
