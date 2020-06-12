@@ -99,7 +99,7 @@
         <nav id="sidebar" class="active">
             <ul class="list-unstyled components">
                 <li>
-                    <a href="NWQM - Home Page.php" class="list-menu">Home</a>
+                    <a href="index.php" class="list-menu">Home</a>
                 </li>
                 <li>
                     <a href="ML Models.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">ML Models</a>
