@@ -117,19 +117,25 @@ getamChartsScripts();
         <nav id="sidebar" class="active">
 		<ul class="list-unstyled components">
                 <li>
-                    <a href="NWQM - Home Page.php">Home</a>
+                    <a href="index.php" class="list-menu">Home</a>
                 </li>
                 <li>
-                    <a href="Realtime Readings.php" class="list-menu">Realtime Readings</a>
+                    <a href="Realtime Readings.php" class="list-menu">Water Quality Data - Tabular</a>
                 </li>
-                <li>
-                    <a href="Realtime Data Analysis.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Data Analysis</a>
+				<li>
+                    <a href="Realtime Data Analysis.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Water Quality Data - Graphical</a>
                 </li>
                  <li>
                     <a href="IoT Map.php" class="list-menu">Classification Map</a>
                 </li>
 				<li>
-                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Prediction</a>
+                    <a href="ml-models.php" class="list-menu">ML Models Analysis</a>
+                </li>
+				<li>
+                    <a href="dataPredictGraphical.php" class="list-menu">Bacteria Prediction on IoT Nodes Data</a>
+                </li>
+				<li>
+                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Calculator</a>
                 </li>
             </ul>
         </nav>
@@ -141,10 +147,10 @@ getamChartsScripts();
 		    	<div class="container">
 		    		<div class="row">
 		    			<div class="content col-12">
-		    				<h1>Realtime Data Analysis</h1>
+		    				<h1>Water Quality Data - Graphical</h1>
 		    				<ul>
 		    					<li><a href="NWQM - Home Page.php">Home</a></li>
-		    					<li class="current"><a href="#">Realtime Data Analysis</a></li>
+		    					<li class="current"><a href="#">Water Quality Data - Graphical</a></li>
 		    				</ul>
 		    			</div>
 		    		</div>
@@ -176,32 +182,20 @@ getamChartsScripts();
 									<div class="panel-body">
 										<form class="form-horizontal form-bordered" method="get" action="Data Charts - Realtime.php">
 											<div class="form-group">
-												<label class="control-label" for="inputSuccess" style="font-weight:bold">Data Source</label>
-												<div class="col-md-6">
-													<select class="form-control input-sm mb-md" id="sourceDropdown">
-														<option value="0" <?php if($kitID=="0"){ echo "selected";}?>>Node 0</option>
-														<option value="1" <?php if($kitID=="1"){ echo "selected";}?> >Node 1</option>
-                                                        <option value="2" <?php if($kitID=="2"){ echo "selected";}?> >Node 2</option>
-                                                        <option value="3" <?php if($kitID=="3"){ echo "selected";}?> >Node 3</option>
-														<option value="4" <?php if($kitID=="4"){ echo "selected";}?> >Node 4</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-											<div class="form-group">
-                                            <label class="control-label" for="inputSuccess" style="font-weight:bold">Data Parameters</label>
+                                            <label class="control-label" for="inputSuccess" style="font-weight:bold">Select Graph Types to Show</label>
 											<div class="col-md-9">
 													<label class="checkbox-inline">
 														<input type="checkbox" id="cbTemperature" value="temperature"> Temperature
-													</label><br>
+													</label>&nbsp;&nbsp;&nbsp;
 													<label class="checkbox-inline">
 														<input type="checkbox" id="cbPH" value="pH"> pH
-													</label><br>
+													</label>&nbsp;&nbsp;&nbsp;
 													<label class="checkbox-inline">
 														<input type="checkbox" id="cbTurbidity" value="turbidity"> Turbidity
-													</label><br>
+													</label>&nbsp;&nbsp;&nbsp;
 													<label class="checkbox-inline">
 														<input type="checkbox" id="cbDissolvedOxygen" value="dissolvedOxygen"> Dissolved Oxygen
-													</label>
+													</label>&nbsp;&nbsp;&nbsp;
 													<label class="checkbox-inline">
 														<input type="checkbox" id="cbConductivity" value="conductivity"> Conductivity
 													</label>
@@ -280,7 +274,7 @@ am4core.useTheme(am4themes_animated);
 		//The Triggers to load the graph for checkbox of each parameter
 		$("#cbTemperature").change(function(){
 			if($("#cbTemperature").prop('checked')){
-				var source=$("#sourceDropdown option:selected").val();
+				var source=0;
 				$.ajax({url: "php/amcharts - realtime.php?valType=temperature&kit="+source, success: function(result){
 					$("#dataChartTemperature").html(result+"<br>");
 				}});
@@ -291,7 +285,7 @@ am4core.useTheme(am4themes_animated);
 		});
 		$("#cbTurbidity").change(function(){
 			if($("#cbTurbidity").prop('checked')){
-				var source=$("#sourceDropdown option:selected").val();
+				var source=0;
 				$.ajax({url: "php/amcharts - realtime.php?valType=turbidity&kit="+source, success: function(result){
 					$("#dataChartTurbidity").html(result+"<br>");
 				}});
@@ -302,7 +296,7 @@ am4core.useTheme(am4themes_animated);
 		});
 		$("#cbPH").change(function(){
 			if($("#cbPH").prop('checked')){
-				var source=$("#sourceDropdown option:selected").val();
+				var source=0;
 				$.ajax({url: "php/amcharts - realtime.php?valType=pH&kit="+source, success: function(result){
 					$("#dataChartPH").html(result+"<br>");
 				}});
@@ -313,7 +307,7 @@ am4core.useTheme(am4themes_animated);
 		});
 		$("#cbDissolvedOxygen").change(function(){
 			if($("#cbDissolvedOxygen").prop('checked')){
-				var source=$("#sourceDropdown option:selected").val();
+				var source=0;
 				$.ajax({url: "php/amcharts - realtime.php?valType=dissolvedOxygen&kit="+source, success: function(result){
 					$("#dataChartDissolvedOxygen").html(result+"<br>");
 				}});
@@ -324,7 +318,7 @@ am4core.useTheme(am4themes_animated);
 		});
 		$("#cbConductivity").change(function(){
 			if($("#cbConductivity").prop('checked')){
-				var source=$("#sourceDropdown option:selected").val();
+				var source=0;
 				$.ajax({url: "php/amcharts - realtime.php?valType=conductivity&kit="+source, success: function(result){
 					$("#dataChartConductivity").html(result+"<br>");
 				}});

@@ -121,21 +121,27 @@
 	<div class="main-wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar" class="active">
-            <ul class="list-unstyled components">
+		<ul class="list-unstyled components">
                 <li>
                     <a href="index.php" class="list-menu">Home</a>
                 </li>
                 <li>
-                    <a href="Realtime Readings.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Realtime Readings</a>
+                    <a href="Realtime Readings.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Water Quality Data - Tabular</a>
                 </li>
-                <li>
-                    <a href="Realtime Data Analysis.php" class="list-menu">Data Analysis</a>
+				<li>
+                    <a href="Realtime Data Analysis.php" >Water Quality Data - Graphical</a>
                 </li>
                  <li>
                     <a href="IoT Map.php" class="list-menu">Classification Map</a>
                 </li>
-                <li>
-                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Prediction</a>
+				<li>
+                    <a href="ml-models.php" class="list-menu">ML Models Analysis</a>
+                </li>
+				<li>
+                    <a href="dataPredictGraphical.php" class="list-menu">Bacteria Prediction on IoT Nodes Data</a>
+                </li>
+				<li>
+                    <a href="BacteriaPrediction.php" >Bacteria Calculator</a>
                 </li>
             </ul>
         </nav>
@@ -147,10 +153,10 @@
 		    	<div class="container">
 		    		<div class="row">
 		    			<div class="content col-12">
-		    				<h1>Realtime Readings</h1>
+		    				<h1>Water Quality Data - Tabular</h1>
 		    				<ul>
 		    					<li><a href="NWQM - Home Page.php">Home</a></li>
-		    					<li class="current"><a href="#">Realtime Readings</a></li>
+		    					<li class="current"><a href="#">Water Quality Data - Tabular</a></li>
 		    				</ul>
 		    			</div>
 		    		</div>

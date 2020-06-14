@@ -18,7 +18,7 @@
 
 function getamChartsDiv2($valType,$kit){
 	
-    $labels='{"turbidity":"Turbidity","pH":"pH","dissolvedOxygen":"Dissolved Oxygen", "conductivity":"Conductivity" , "temperature":"Temperature"}';
+    $labels='{"turbidity":"Turbidity (NTU)","pH":"pH","dissolvedOxygen":"Dissolved Oxygen ()", "conductivity":"Conductivity" , "temperature":"Temperature"}';
     $labels=json_decode($labels,TRUE);
     echo '
     <div class="row" style="width:100%">
@@ -98,7 +98,7 @@ function getamChartsDiv2($valType,$kit){
     chart.scrollbarX.parent = chart.bottomAxesContainer;
     
     chart.events.on("ready", function () {
-      dateAxis.zoom({start:0.79, end:1});
+      dateAxis.zoom({start:0.9464122257709987, end:0.9473122526573511});
     });            }
     catch( e ) {
       console.log( e ); 

@@ -107,7 +107,7 @@ function getamChartsDiv2($valType,$kit){
     chart.scrollbarX.parent = chart.bottomAxesContainer;
     
     chart.events.on("ready", function () {
-      dateAxis.zoom({start:0.79, end:1});
+      dateAxis.zoom({start:0.9464122257709987, end:0.9473122526573511});
     });            }
     catch( e ) {
       console.log( e ); 

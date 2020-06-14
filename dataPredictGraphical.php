@@ -119,19 +119,25 @@ getamChartsScripts();
         <nav id="sidebar" class="active">
 		<ul class="list-unstyled components">
                 <li>
-                    <a href="NWQM - Home Page.php">Home</a>
+                    <a href="index.php" class="list-menu">Home</a>
                 </li>
                 <li>
-                    <a href="Realtime Readings.php" class="list-menu">Realtime Readings</a>
+                    <a href="Realtime Readings.php" class="list-menu">Water Quality Data - Tabular</a>
                 </li>
-                <li>
-                    <a href="Realtime Data Analysis.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Data Analysis</a>
+				<li>
+                    <a href="Realtime Data Analysis.php" class="list-menu">Water Quality Data - Graphical</a>
                 </li>
                  <li>
                     <a href="IoT Map.php" class="list-menu">Classification Map</a>
                 </li>
 				<li>
-                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Prediction</a>
+                    <a href="ml-models.php" class="list-menu">ML Models Analysis</a>
+                </li>
+				<li>
+                    <a href="dataPredictGraphical.php" class="list-menu">Bacteria Prediction on IoT Nodes Data</a>
+                </li>
+				<li>
+                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Calculator</a>
                 </li>
             </ul>
         </nav>
@@ -194,7 +200,6 @@ am4core.useTheme(am4themes_patterns);
 am4core.useTheme(am4themes_animated);
 
 </script>
-
 				<div style="width:100%">
 					<div id="dataChartTemperature">
 					</div>

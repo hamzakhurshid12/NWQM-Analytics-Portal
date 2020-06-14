@@ -125,16 +125,22 @@ getamChartsScripts();
                     <a href="index.php" class="list-menu">Home</a>
                 </li>
                 <li>
-                    <a href="Realtime Readings.php" class="list-menu">Realtime Readings</a>
+                    <a href="Realtime Readings.php" class="list-menu">Water Quality Data - Tabular</a>
                 </li>
-                <li>
-                    <a href="Realtime Data Analysis.php" class="list-menu">Data Analysis</a>
+				<li>
+                    <a href="Realtime Data Analysis.php" class="list-menu">Water Quality Data - Graphical</a>
                 </li>
                  <li>
                     <a href="IoT Map.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Classification Map</a>
                 </li>
-                <li>
-                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Prediction</a>
+				<li>
+                    <a href="ml-models.php" class="list-menu">ML Models Analysis</a>
+                </li>
+				<li>
+                    <a href="dataPredictGraphical.php" class="list-menu">Bacteria Prediction on IoT Nodes Data</a>
+                </li>
+				<li>
+                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Calculator</a>
                 </li>
             </ul>
         </nav>

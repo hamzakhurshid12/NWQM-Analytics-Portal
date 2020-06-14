@@ -202,7 +202,7 @@ input,textarea,form-control,
 input:hover,textarea:hover,form-control:hover,
 input:focus,textarea:focus,form-control:focus{
 	outline: 0 !important;
-	border:none !important;
+	/*border:none !important;*/
     box-shadow: none !important;
    -webkit-box-shadow: none !important;
    -moz-box-shadow: none !important;

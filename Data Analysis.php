@@ -107,28 +107,27 @@ getamChartsScripts();
 	<div class="main-wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar" class="active">
-            <ul class="list-unstyled components">
+		<ul class="list-unstyled components">
                 <li>
                     <a href="index.php" class="list-menu">Home</a>
                 </li>
                 <li>
-                    <a href="Historic Readings.php" class="list-menu">Historic Readings</a>
+                    <a href="Realtime Readings.php" class="list-menu">Water Quality Data - Tabular</a>
                 </li>
-                <li>
-                    <a href="Realtime Readings.php" class="list-menu">Realtime Readings</a>
+				<li>
+                    <a href="Realtime Data Analysis.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Water Quality Data - Graphical</a>
                 </li>
-                <li>
-                    <a href="Data Analysis.php" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle list-menu">Data Analysis</a>
+                 <li>
+                    <a href="IoT Map.php" class="list-menu">Classification Map</a>
                 </li>
-                <li>
-                    <a href="Realtime Data Analysis.php" class="list-menu">Realtime Data Analysis</a>
+				<li>
+                    <a href="ml-models.php" class="list-menu">ML Models Analysis</a>
                 </li>
+				<li>
+                    <a href="dataPredictGraphical.php" class="list-menu">Bacteria Prediction on IoT Nodes Data</a>
                 </li>
-                <li>
-                    <a href="IoT Map.php" class="list-menu">IoT Map</a>
-                </li>
-                <li>
-                    <a href="BacteriaPrediction.php" class="list-menu">Bacteria Prediction</a>
+				<li>
+                    <a href="BacteriaPrediction.php" >Bacteria Calculator</a>
                 </li>
             </ul>
         </nav>
@@ -140,10 +139,10 @@ getamChartsScripts();
 		    	<div class="container">
 		    		<div class="row">
 		    			<div class="content col-12">
-		    				<h1>Data Analysis</h1>
+		    				<h1>Water Quality Data - Historical</h1>
 		    				<ul>
 		    					<li><a href="NWQM - Home Page.php">Home</a></li>
-		    					<li class="current"><a href="#">Data Analysis</a></li>
+		    					<li class="current"><a href="#">Water Quality Data - Historical</a></li>
 		    				</ul>
 		    			</div>
 		    		</div>
@@ -173,7 +172,7 @@ getamChartsScripts();
 									</header>
 									<div>
 										<form class="form-horizontal" method="get" style="width: 100%">
-											<div class="form-group">
+											<div style="display:none;" class="form-group">
 												<label class="col-md-3 control-label" for="inputSuccess">Data Source</label>
 												<div class="col-md-6" style="width: 100%">
 													<select class="form-control input-sm mb-md" id="sourceDropdown">
@@ -314,7 +313,7 @@ am4core.useTheme(am4themes_animated);
 									</header>
 									<div>
 										<form class="form-horizontal" method="get" style="width: 100%">
-											<div class="form-group">
+											<div style="display:none;" class="form-group">
 												<label class="col-md-3 control-label" for="inputSuccess">Data Source</label>
 												<div class="col-md-6" style="width: 100%">
 													<select class="form-control input-sm mb-md" id="sourceDropdown1">
